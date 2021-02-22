@@ -9,6 +9,9 @@ import { useState } from "react";
 
 const ProductList = (props) => {
   const [query, setQuery] = useState("");
+  const deleteProduct = (productId) => {
+    console.log(`Delete cookie with the ID ${productId}`);
+  };
 
   const productList = products
     .filter((product) => product.name.includes(query))
@@ -17,6 +20,7 @@ const ProductList = (props) => {
         product={product}
         key={product.id}
         setProduct={props.setProduct}
+        deleteProduct={deleteProduct}
       />
     ));
 

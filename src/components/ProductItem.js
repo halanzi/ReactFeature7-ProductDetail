@@ -1,9 +1,11 @@
 // Styling
-import { ProductWrapper } from "../styles";
+import { ProductWrapper, DeleteButtonStyled } from "../styles";
 
 const ProductItem = (props) => {
   const product = props.product;
-  console.log(props);
+  const handleDelete = () => {
+    props.deleteProduct(product.id);
+  };
   return (
     <ProductWrapper>
       <img
@@ -13,6 +15,7 @@ const ProductItem = (props) => {
       />
       <p>{product.name}</p>
       <p className="product-price">{product.price} KD</p>
+      <DeleteButtonStyled onClick={handleDelete}>Delete</DeleteButtonStyled>
     </ProductWrapper>
   );
 };
