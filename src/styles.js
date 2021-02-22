@@ -76,3 +76,12 @@ export const ThemeButton = styled.button`
 export const Title = styled.h1`
   text-align: center;
 `;
+
+export const ListButton = styled.button`
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 0.5em;
+  border-radius: 2.5px;
+  background-color: ${(props) => props.theme.mainColor};
+  color: ${(props) => props.theme.backgroundColor};
+`;
