@@ -3,10 +3,14 @@ import { ProductWrapper } from "../styles";
 
 const ProductItem = (props) => {
   const product = props.product;
-
+  console.log(props);
   return (
     <ProductWrapper>
-      <img alt={product.name} src={product.image} />
+      <img
+        alt={product.name}
+        src={product.image}
+        onClick={() => props.setProduct(product)}
+      />
       <p>{product.name}</p>
       <p className="product-price">{product.price} KD</p>
     </ProductWrapper>
